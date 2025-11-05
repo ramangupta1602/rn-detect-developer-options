@@ -1,20 +1,20 @@
-import { Text, View, StyleSheet } from 'react-native';
-import { multiply } from 'rn-detect-developer-options';
-
-const result = multiply(3, 7);
+import React, { useEffect } from 'react';
+import { View, Text, Alert } from 'react-native';
+import { isDeveloperOptionsEnabled } from 'rn-detect-developer-options';
 
 export default function App() {
+  useEffect(() => {
+    (async () => {
+      const enabled = await isDeveloperOptionsEnabled();
+      if (enabled) {
+        Alert.alert('Warning', 'Developer Options are enabled on this device!');
+      }
+    })();
+  }, []);
+
   return (
-    <View style={styles.container}>
-      <Text>Result: {result}</Text>
+    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+      <Text>Detect Developer Options (Kotlin) Demo</Text>
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});

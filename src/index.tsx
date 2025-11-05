@@ -1,5 +1,7 @@
-import RnDetectDeveloperOptions from './NativeRnDetectDeveloperOptions';
+import NativeRnDetectDeveloperOptions from './NativeRnDetectDeveloperOptions';
 
-export function multiply(a: number, b: number): number {
-  return RnDetectDeveloperOptions.multiply(a, b);
+export async function isDeveloperOptionsEnabled(): Promise<boolean> {
+  return await NativeRnDetectDeveloperOptions.isDeveloperOptionsEnabled();
 }
+
+export default { isDeveloperOptionsEnabled };
