@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "types": ["react-native", "jest"],
+    "types": ["react-native"],
     "rootDir": ".",
     "paths": {
       "rn-detect-developer-options": ["./src/index"]

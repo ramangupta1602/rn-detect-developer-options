@@ -1,37 +1,15 @@
 # rn-detect-developer-options
 
-A lightweight React Native library to detect if Developer Options or USB Debugging are enabled on an Android device. It helps developers prevent tampering, improve app security, or show custom warnings or actions (like dialogs or redirects) when Developer Mode is active.
+[![npm version](https://img.shields.io/npm/v/rn-detect-developer-options.svg)](https://www.npmjs.com/package/rn-detect-developer-options)
+[![npm downloads](https://img.shields.io/npm/dt/rn-detect-developer-options.svg)](https://www.npmjs.com/package/rn-detect-developer-options)
+[![license](https://img.shields.io/npm/l/rn-detect-developer-options.svg)](LICENSE)
 
-## Installation
-
-
-```sh
-npm install rn-detect-developer-options
-```
-
-
-## Usage
-
-
-```js
-import { multiply } from 'rn-detect-developer-options';
-
-// ...
-
-const result = multiply(3, 7);
-```
-
-
-## Contributing
-
-- [Development workflow](CONTRIBUTING.md#development-workflow)
-- [Sending a pull request](CONTRIBUTING.md#sending-a-pull-request)
-- [Code of conduct](CODE_OF_CONDUCT.md)
-
-## License
-
-MIT
+A lightweight **React Native** library to detect if **Developer Options** or **USB Debugging** are enabled on an Android device.  
+Useful for preventing tampering, enhancing app security, or showing custom warnings when Developer Mode is active.
 
 ---
 
-Made with [create-react-native-library](https://github.com/callstack/react-native-builder-bob)
+## 🚀 Installation
+
+```bash
+npm install rn-detect-developer-options
