@@ -1,32 +1,28 @@
 package com.rndetectdeveloperoptions
 
-import android.content.ContentResolver
+import android.content.Context
 import android.provider.Settings
 import com.facebook.react.bridge.Promise
 import com.facebook.react.bridge.ReactApplicationContext
-import com.facebook.react.module.annotations.ReactModule
+import com.facebook.react.bridge.ReactContextBaseJavaModule
+import com.facebook.react.bridge.ReactMethod
 
-@ReactModule(name = RnDetectDeveloperOptionsModule.NAME)
-class RnDetectDeveloperOptionsModule(reactContext: ReactApplicationContext) :
-    NativeRnDetectDeveloperOptionsSpec(reactContext) {
+class RnDetectDeveloperOptionsModule(reactContext: ReactApplicationContext) : ReactContextBaseJavaModule(reactContext) {
 
-    override fun getName(): String = NAME
+    override fun getName(): String {
+        return "RnDetectDeveloperOptions"
+    }
 
-    override fun isDeveloperOptionsEnabled(promise: Promise) {
+    @ReactMethod
+    fun isDeveloperOptionsEnabled(promise: Promise) {
         try {
-            val resolver: ContentResolver = reactApplicationContext.contentResolver
             val devOptions = Settings.Global.getInt(
-                resolver,
-                Settings.Global.DEVELOPMENT_SETTINGS_ENABLED,
-                0
+                reactApplicationContext.contentResolver,
+                Settings.Global.DEVELOPMENT_SETTINGS_ENABLED, 0
             )
             promise.resolve(devOptions == 1)
         } catch (e: Exception) {
-            promise.reject("ERROR", e.message, e)
+            promise.reject("ERROR", e.message)
         }
-    }
-
-    companion object {
-        const val NAME = "RnDetectDeveloperOptions"
     }
 }
