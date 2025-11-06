@@ -5,6 +5,8 @@ export interface Spec extends TurboModule {
   isDeveloperOptionsEnabled(): Promise<boolean>;
 }
 
-export default TurboModuleRegistry.getEnforcing<Spec>(
+const NativeRnDetectDeveloperOptions = TurboModuleRegistry.getEnforcing<Spec>(
   'RnDetectDeveloperOptions'
 );
+
+export default NativeRnDetectDeveloperOptions;

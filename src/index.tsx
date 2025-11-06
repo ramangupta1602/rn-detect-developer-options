@@ -1,7 +1,6 @@
 import NativeRnDetectDeveloperOptions from './NativeRnDetectDeveloperOptions';
 
-export async function isDeveloperOptionsEnabled(): Promise<boolean> {
-  return await NativeRnDetectDeveloperOptions.isDeveloperOptionsEnabled();
-}
+export const isDeveloperOptionsEnabled = async (): Promise<boolean> =>
+    await NativeRnDetectDeveloperOptions.isDeveloperOptionsEnabled();
 
-export default { isDeveloperOptionsEnabled };
+export default isDeveloperOptionsEnabled;
