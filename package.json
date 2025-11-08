@@ -1,13 +1,10 @@
 {
   "name": "rn-detect-developer-options",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "private": false,
   "description": "A lightweight React Native library to detect if Developer Options or USB Debugging are enabled on an Android device. It helps developers prevent tampering, improve app security, or show custom warnings or actions (like dialogs or redirects) when Developer Mode is active.",
   "main": "./lib/module/index.js",
   "types": "./lib/typescript/src/index.d.ts",
-  "publishConfig": {
-    "access": "public"
-  },
   "exports": {
     ".": {
       "source": "./src/index.tsx",
@@ -59,7 +56,8 @@
   },
   "homepage": "https://github.com/ramangupta1602/rn-detect-developer-options#readme",
   "publishConfig": {
-    "registry": "https://registry.npmjs.org/"
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
   },
   "devDependencies": {
     "@commitlint/config-conventional": "^19.8.1",
